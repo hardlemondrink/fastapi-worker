@@ -1,6 +1,8 @@
-fastapi
-uvicorn
-pydantic
+fastapi~=0.79.0
+uvicorn~=0.18.3
+pydantic~=1.9.2
 python-dotenv
-sqlalchemy
-PuLP
+sqlalchemy~=1.4.40
+python-jose
+passlib[bcrypt]~=1.7.4
+python-multipart

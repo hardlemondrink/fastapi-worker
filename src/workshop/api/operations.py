@@ -1,7 +1,5 @@
 from typing import List, Optional
-from urllib import response
-from webbrowser import Opera
-from xmlrpc.client import Boolean
+
 
 from fastapi import APIRouter
 from fastapi import Depends
@@ -34,6 +32,6 @@ def delete_operation(operation_id: int, service: OperationsService = Depends()):
     return service.delete(operation_id)
 
 
-# @router.update('/{operation_id}', response_model=Operation)
-# def update_operation(operation_id: int, service: OperationsService = Depends()):
-#     return service.update(operation_id)
+@router.put('/{operation_id}', response_model=Operation)
+def update_operation(operation_id: int, service: OperationsService = Depends()):
+    return service.update(operation_id)

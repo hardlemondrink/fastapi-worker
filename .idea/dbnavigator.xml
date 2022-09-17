@@ -31,7 +31,8 @@
     <connection id="45f36962-0c3f-4e2e-bde2-16bcafbdf458">
       <console name="main_base" type="STANDARD" schema="main" session="Main"><![CDATA[--insert into users (id, country, email, first_name, isActive, last_name, login, phoneNumber, registration_date, registration_type) 
 --values ('Russia', 'gennady_vyacheslavovich@mail.ru', 'Gennady', True, 'Pryakhin', 'gpryakhin', '79639999814', '2022-09-17 20:47:00', 'phone')
-select * from booking]]></console>
+--select * from users
+--drop table main.users]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
@@ -41,6 +42,7 @@ select * from booking]]></console>
     <connection id="45f36962-0c3f-4e2e-bde2-16bcafbdf458" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="45f36962-0c3f-4e2e-bde2-16bcafbdf458" dataset="main.operations" active-filter-id="" />
     <filter-actions connection-id="45f36962-0c3f-4e2e-bde2-16bcafbdf458" dataset="main.users" active-filter-id="" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
