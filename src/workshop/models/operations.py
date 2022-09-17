@@ -1,5 +1,4 @@
-from datetime import date, datetime
-from decimal import Decimal
+from datetime import datetime
 from enum import Enum
 from typing import Optional
 
@@ -24,8 +23,10 @@ class Operation(OperationBase):
     class Config:
         orm_mode = True
 
+
 class OperationCreate(OperationBase):
     pass
+
 
 class OperationUpdate(OperationBase):
     pass
