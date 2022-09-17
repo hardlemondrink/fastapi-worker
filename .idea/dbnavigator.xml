@@ -31,7 +31,7 @@
     <connection id="45f36962-0c3f-4e2e-bde2-16bcafbdf458">
       <console name="main_base" type="STANDARD" schema="main" session="Main"><![CDATA[--insert into users (id, country, email, first_name, isActive, last_name, login, phoneNumber, registration_date, registration_type) 
 --values ('Russia', 'gennady_vyacheslavovich@mail.ru', 'Gennady', True, 'Pryakhin', 'gpryakhin', '79639999814', '2022-09-17 20:47:00', 'phone')
-select * from users]]></console>
+select * from booking]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">

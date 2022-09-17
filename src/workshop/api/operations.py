@@ -34,6 +34,6 @@ def delete_operation(operation_id: int, service: OperationsService = Depends()):
     return service.delete(operation_id)
 
 
-@router.update('/{operation_id}', response_model=Operation)
-def update_operation(operation_id: int, service: OperationsService = Depends()):
-    return service.update(operation_id)
+# @router.update('/{operation_id}', response_model=Operation)
+# def update_operation(operation_id: int, service: OperationsService = Depends()):
+#     return service.update(operation_id)
