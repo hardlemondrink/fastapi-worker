@@ -1,4 +1,5 @@
 from typing import List, Optional
+from urllib import response
 from webbrowser import Opera
 from xmlrpc.client import Boolean
 
@@ -28,6 +29,11 @@ def get_operation(operation_id: int, service: OperationsService = Depends()):
     return service.get(operation_id=operation_id)
 
 
-@router.delete('/', response_model=Boolean)
+@router.delete('/')
 def delete_operation(operation_id: int, service: OperationsService = Depends()):
-    return service.delete(operation_id=operation_id)
+    return service.delete(operation_id)
+
+
+@router.update('/{operation_id}', response_model=Operation)
+def update_operation(operation_id: int, service: OperationsService = Depends()):
+    return service.update(operation_id)
