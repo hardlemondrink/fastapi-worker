@@ -33,6 +33,10 @@ class Booking(Base):
     description = sa.Column(sa.String, nullable=True)
     book_type = sa.Column(sa.String, nullable=False)
     address = sa.Column(sa.String)
+    price = sa.Column(sa.Float)
+    country = sa.Column(sa.String, nullable=False)
+    city = sa.Column(sa.String, nullable=False)
+    phoneNumber = sa.Column(sa.String)
 
 
 class Pictures(Base):

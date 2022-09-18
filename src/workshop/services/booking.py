@@ -49,6 +49,18 @@ class BookingService:
         books = query.all()
         return books
 
+    def create_many(self, user_id: int, books_data: List[BookingCreate]) -> List[tables.Booking]:
+        books = [
+            tables.Booking(
+                **book_data.dict(),
+                user_id=user_id
+            )
+            for book_data in books_data
+        ]
+        self.session.add_all(books)
+        self.session.commit()
+        return books
+
     def create(self,
                user_id: int,
                book_data: BookingCreate) -> tables.Booking:

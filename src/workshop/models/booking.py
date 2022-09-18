@@ -4,8 +4,6 @@ from typing import Optional, List
 
 from pydantic import BaseModel
 
-from ..models.pictures import Picture
-
 
 class BookType(str, Enum):
     # Сдать в аренду
@@ -15,19 +13,21 @@ class BookType(str, Enum):
 
 
 class BookingBase(BaseModel):
-    id: int
     created_at: datetime
     description: Optional[str]
     book_type: BookType
     address: str
-    # pics: List[Picture]
-
-    class Config:
-        orm_mode = True
+    price: float
+    country: str
+    city: str
+    phoneNumber: str
 
 
 class Booking(BookingBase):
-    pass
+    id: int
+
+    class Config:
+        orm_mode = True
 
 
 class BookingCreate(BookingBase):
