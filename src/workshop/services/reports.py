@@ -26,6 +26,7 @@ class ReportsService:
         )
 
         books = []
+        next(reader)
         for row in reader:
             book_data = BookingCreate.parse_obj(row)
             if book_data.description == '':
