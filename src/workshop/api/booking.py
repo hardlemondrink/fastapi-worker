@@ -39,7 +39,7 @@ def get_book(book_id: int,
     return service.get(user_id=user.id, book_id=book_id)
 
 
-@router.delete('/')
+@router.delete('/{book_id}')
 def delete_book(book_id: int,
                 service: BookingService = Depends(),
                 user: User = Depends(get_current_user)):
