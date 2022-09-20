@@ -6,3 +6,4 @@ sqlalchemy~=1.4.40
 python-jose
 passlib[bcrypt]~=1.7.4
 python-multipart
+python-dotenv

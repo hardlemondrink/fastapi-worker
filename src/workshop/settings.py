@@ -6,7 +6,7 @@ class Settings(BaseSettings):
     server_port: int = 5000
     database_url: str = 'sqlite:///./database.sqlite3'
 
-    jwt_secret: str
+    jwt_secret: str = 'VayKC6qMa7mp9Y_sEVqD2VREiK_pWV_iFksyJRIz2Us'
     jwt_algorithm: str = 'HS256'
     jwt_expiration: int = 3600
 
