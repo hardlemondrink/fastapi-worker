@@ -3,3 +3,4 @@ database.sqlite3
 .idea
 .vscode
 venv
+app_map.txt
