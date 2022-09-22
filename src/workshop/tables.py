@@ -46,3 +46,11 @@ class Pictures(Base):
     path = sa.Column(sa.String, nullable=False)
     booking_id = sa.Column(sa.Integer, nullable=False)
 
+
+class Reservation(Base):
+    __tablename__ = 'reservations'
+
+    id = sa.Column(sa.Integer, primary_key=True)
+    booking_id = sa.Column(sa.Integer)
+    created_at = sa.Column(DATETIME(fsp=6))
+    user_id = sa.Column(sa.Integer)
