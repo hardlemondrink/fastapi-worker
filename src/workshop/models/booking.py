@@ -13,7 +13,6 @@ class BookType(str, Enum):
 
 
 class BookingBase(BaseModel):
-    created_at: datetime
     description: Optional[str]
     book_type: BookType
     address: str
@@ -25,6 +24,8 @@ class BookingBase(BaseModel):
 
 class Booking(BookingBase):
     id: int
+    created_at: datetime
+    isActive: bool
 
     class Config:
         orm_mode = True

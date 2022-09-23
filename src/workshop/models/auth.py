@@ -12,6 +12,7 @@ class UserCreate(BaseUser):
 
 class User(BaseUser):
     id: int
+    isActive: bool
 
     class Config:
         orm_mode = True

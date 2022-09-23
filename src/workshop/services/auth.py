@@ -13,7 +13,6 @@ from ..models.auth import User, UserCreate, Token
 from ..database import get_session
 from ..settings import settings
 
-
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl='/auth/sign-in')
 
 
@@ -88,6 +87,7 @@ class AuthService:
             email=user_data.email,
             username=user_data.username,
             password_hash=self.hash_password(user_data.password),
+            isActive=True
         )
 
         self.session.add(user)
@@ -107,7 +107,8 @@ class AuthService:
         user = (
             self.session
             .query(tables.User)
-            .filter(tables.User.username == username)
+            .filter_by(username=username,
+                       isActive=True)
             .first()
         )
 

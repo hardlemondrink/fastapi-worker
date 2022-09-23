@@ -19,6 +19,7 @@ class OperationBase(BaseModel):
 
 class Operation(OperationBase):
     id: int
+    isActive: bool
 
     class Config:
         orm_mode = True

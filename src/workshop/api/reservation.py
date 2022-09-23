@@ -16,11 +16,11 @@ router = APIRouter(
 def get_reservations(reservation_id: Optional[int] = None,
                      service: ReservationService = Depends(),
                      user: User = Depends(get_current_user)):
-    return service.get_reservations(user.id, reservation_id)
+    return service.get(user.id, reservation_id)
 
 
-@router.post('/', response_model=ReservationCreate)
+@router.post('/', response_model=Reservation)
 def create_reservation(reservation_data: ReservationCreate,
                        service: ReservationService = Depends(),
                        user: User = Depends(get_current_user)):
-    return service.create_reservation(user.id, reservation_data)
+    return service.create(user.id, reservation_data)

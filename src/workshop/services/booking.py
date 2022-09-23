@@ -1,3 +1,4 @@
+import datetime
 from typing import List, Optional
 
 from fastapi import (
@@ -68,6 +69,8 @@ class BookingService:
         book = tables.Booking(
             **book_data.dict(),
             user_id=user_id,
+            created_at=datetime.datetime.utcnow(),
+            isActive=True
         )
         self.session.add(book)
         self.session.commit()

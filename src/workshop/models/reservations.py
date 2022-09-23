@@ -3,21 +3,24 @@ from datetime import datetime
 
 
 class ReservationBase(BaseModel):
+    booking_id: int
+    booking_expiration: datetime
+
+
+class Reservation(ReservationBase):
     id: int
+    created_at: datetime
+    isActive: bool
 
     class Config:
         orm_mode = True
 
 
-class ReservationCreate(BaseModel):
-    booking_id: int
-    created_at: datetime
+class ReservationCreate(ReservationBase):
+    pass
 
 
-class Reservation(BaseModel):
-    id: int
-    booking_id: int
-    created_at: datetime
-
+class ReservationUpdate(ReservationBase):
+    pass
 
 
